@@ -322,9 +322,9 @@ class Graphic_Interface:
             self.MW_Button_Start['text'] = 'Start'
 
 
-Cube = MagicCube(1234)
-
-Cube.connect('10.0.0.30')
+Cube = MagicCube(123)
+# can connect via hostname/ip
+Cube.connect(AppConfig.pi_hostname)
 Cube.send(Cube.Request_Run)
 Cube.ReadValues = True
 

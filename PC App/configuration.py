@@ -1,5 +1,6 @@
 
 class AppConfig:
+    pi_hostname = "MagicCube"
 
     Count_BufferLength = 25
     # sensitivity for the count threshold
