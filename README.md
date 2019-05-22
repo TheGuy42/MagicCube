@@ -50,3 +50,6 @@ The cube itself is 80x80x80 mm with two 35.355mm Isosceles triangles on opposing
 You can find here also 3d printable .stl files. The 3rd iteration was printed using the original prusa mk3s
 The first two iterations were made with 3mm plywood.
 
+On each face of the cube you will have a place to glue magnets that hold the top face.
+Also the `CubeFace_Holder` file is for parts that connect between the cube faces if you don't want to glue, or for initial assembly. Note that you will have to glue the triangle faces.
+
