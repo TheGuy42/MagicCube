@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dec1597d-f876-478a-a9d7-0fdfd27e5167" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1593219856">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.5" value="4" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="6" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="mpu6050-example" value="1" />
+          <entry key="py" value="166" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="167" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="50" />
+          <entry key="dummy" value="21" />
+          <entry key="mpu6050-example" value="574" />
+          <entry key="py" value="21488" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="Python" value="22112" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-911224584">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="27" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="27" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.580832">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/MagicCube.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="462">
+                  <caret line="58" column="102" selection-start-line="58" selection-start-column="102" selection-end-line="58" selection-end-column="102" />
+                  <folding>
+                    <element signature="e#0#13#0" expanded="true" />
+                    <element signature="e#897#1111#0" />
+                    <element signature="e#2223#2485#0" />
+                    <element signature="e#2558#2594#0" />
+                    <element signature="e#2733#2778#0" />
+                    <element signature="e#2842#2908#0" />
+                    <element signature="e#2999#3045#0" />
+                    <element signature="e#3178#3215#0" />
+                    <element signature="e#3315#3352#0" />
+                    <element signature="e#4108#4451#0" />
+                    <element signature="e#4488#4515#0" />
+                    <element signature="e#4552#4605#0" />
+                    <element signature="e#4641#4728#0" />
+                    <element signature="e#4810#4900#0" />
+                    <element signature="e#5048#5698#0" />
+                    <element signature="e#5797#5940#0" />
+                    <element signature="e#6299#6575#0" />
+                    <element signature="e#6677#6820#0" />
+                    <element signature="e#7081#7182#0" />
+                    <marker date="1558543060000" expanded="true" signature="2905:2986" ph="..." />
+                    <marker date="1558543060000" expanded="true" signature="4559:4596" ph="..." />
+                    <marker date="1558543060000" expanded="true" signature="4712:4814" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Pickle_Interface.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="132">
+                  <caret line="7" column="12" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/MagicCube.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="277">
+                  <caret line="85" selection-start-line="85" selection-end-line="85" />
+                  <folding>
+                    <element signature="e#0#13#0" expanded="true" />
+                    <element signature="e#897#1111#0" />
+                    <element signature="e#2223#2485#0" />
+                    <element signature="e#2558#2594#0" />
+                    <element signature="e#2842#2908#0" />
+                    <element signature="e#2999#3045#0" />
+                    <element signature="e#3178#3215#0" />
+                    <element signature="e#3315#3352#0" />
+                    <element signature="e#4108#4451#0" />
+                    <element signature="e#4488#4515#0" />
+                    <element signature="e#4552#4605#0" />
+                    <element signature="e#4641#4728#0" />
+                    <element signature="e#4810#4900#0" />
+                    <element signature="e#5048#5698#0" />
+                    <element signature="e#5797#5940#0" />
+                    <element signature="e#6035#6191#0" />
+                    <element signature="e#6299#6575#0" />
+                    <element signature="e#6677#6820#0" />
+                    <element signature="e#7081#7182#0" />
+                    <marker date="1558543060000" expanded="true" signature="2905:2986" ph="..." />
+                    <marker date="1558543060000" expanded="true" signature="4559:4596" ph="..." />
+                    <marker date="1558543060000" expanded="true" signature="4712:4814" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Client.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="352">
+                  <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+                  <folding>
+                    <element signature="e#0#50#0" expanded="true" />
+                    <marker date="1558451492000" expanded="true" signature="770:804" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/configuration.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="44">
+                  <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+                  <folding>
+                    <marker date="1558451476000" expanded="true" signature="430:456" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>accel_data</find>
+      <find>math</find>
+      <find>F</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_5/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_7/Server.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_6/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_7_10/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_7_9/pickle.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_7_11/pickle_interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_4/mpu6050_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/201346_2_0/mpu6050_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/201346_2_3/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/201346_2_2/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/1052226_2_0/rpi_neopixel_simpletest.py" />
+        <option value="$PROJECT_DIR$/Raspberry Pi backup 15 FEB/Adafruit_CircuitPython_NeoPixel/examples/rpi_neopixel_simpletest.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/133110_2_0/rpi_neopixel_simpletest.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/133110_2_2/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/133110_2_1/LED_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2363390_4_1/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2363390_4_3/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2363390_4_2/mpu6050_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2363390_4_0/LED_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/264396_2_0/MagicCube.py" />
+        <option value="$PROJECT_DIR$/QT/MagicCube/mainwindows.py" />
+        <option value="J:/Python/Anigma/AnigmaMain.py" />
+        <option value="$PROJECT_DIR$/Raspberry Pi backup 15 FEB/tk_interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_0/MagicCube.py" />
+        <option value="$PROJECT_DIR$/Pickle_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/722758_10_4/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/529604_5_1/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/529604_5_2/LED_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/529604_5_0/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_2_2/Server.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_2_0/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_4_3/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2295640_3_1/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_2/LED_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_3/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_4/mpu6050_Interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_5/Server.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_1/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_3/Server.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_0/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_6/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_7/MagicCube.py" />
+        <option value="$PROJECT_DIR$/tk_interface.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_1/Server.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_2/config.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_2_0/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_2/MagicCube.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_0/config.py" />
+        <option value="$PROJECT_DIR$/configuration.py" />
+        <option value="$PROJECT_DIR$/Client.py" />
+        <option value="$PROJECT_DIR$/MagicCube.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-14" />
+    <option name="y" value="-14" />
+    <option name="width" value="3864" />
+    <option name="height" value="2135" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Magic Cube" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Magic Cube" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/rasPi v2/MagicCube.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.MagicCube">
+    <configuration name="Client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Magic Cube" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MagicCube" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Magic Cube" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MagicCube.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mainwindows" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Magic Cube" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/QT/MagicCube" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/QT/MagicCube/mainwindows.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tk_interface (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Magic Cube" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tk_interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tk_interface" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Magic Cube" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Raspberry Pi backup 15 FEB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Raspberry Pi backup 15 FEB/tk_interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Client" />
+      <item itemvalue="Python.MagicCube" />
+      <item itemvalue="Python.tk_interface" />
+      <item itemvalue="Python.mainwindows" />
+      <item itemvalue="Python.tk_interface (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.MagicCube" />
+        <item itemvalue="Python.tk_interface (1)" />
+        <item itemvalue="Python.tk_interface" />
+        <item itemvalue="Python.mainwindows" />
+        <item itemvalue="Python.Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dec1597d-f876-478a-a9d7-0fdfd27e5167" name="Default Changelist" comment="" />
+      <created>1543502808547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543502808547</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="2208" height="1208" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49262202" visible="true" weight="0.12569061" />
+      <window_info id="Structure" order="1" sideWeight="0.507378" side_tool="true" weight="0.12569061" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32992566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49861878" visible="true" weight="0.18122676" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30390334" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32992566" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32992566" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013812" side_tool="true" weight="0.18122676" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32992566" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49715585" visible="true" weight="0.12569061" />
+      <window_info id="Structure" order="1" sideWeight="0.50284415" side_tool="true" weight="0.12569061" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32992566" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49953958" weight="0.1830855" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39962825" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32992566" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32992566" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5004604" side_tool="true" weight="0.1830855" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32992566" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Google Drive/MagicCube/venv/Lib/site-packages/pip-10.0.1-py3.7.egg/pip/_vendor/cachecontrol/_cmd.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QT/MagicCube/mainwindows.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/264396_2_0/MagicCube.py" />
+    <entry file="file://$PROJECT_DIR$/keyboard.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raspberry Pi backup 15 FEB/tk_interface.py" />
+    <entry file="file://J:/Python/Anigma Tkinter/AnigmaTkinter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://J:/Python/Anigma/AnigmaMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_1/Server.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_3/LED_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_0/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_5/pickle_interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_4/mpu6050_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/19401834_2_2/config.py" />
+    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="1940" selection-start-line="1940" selection-end-line="1940" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="1173" selection-start-line="1173" selection-end-line="1173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/722758_3_0/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/722758_10_3/Server.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/722758_10_4/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/529604_5_0/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/529604_5_2/LED_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/529604_5_1/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_2_0/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_4_3/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_4_4/LED_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_2_2/Server.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/989602_2_1/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2295640_3_0/LED_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/2295640_3_1/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_2/LED_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_4/mpu6050_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_3/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_5/Server.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/17304474_2_1/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_0/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_2/mpu6050_Interface.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_4/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_3/Server.py" />
+    <entry file="file://$PROJECT_DIR$/Raspberry Pi backup 11 APRIL/MagicCube/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_6/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_7/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_2/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_2_0/MagicCube.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tk_interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_1/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_0/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_1/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_2/MagicCube.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pickle_Interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+            <marker date="1558451492000" expanded="true" signature="770:804" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding>
+            <marker date="1558451476000" expanded="true" signature="430:456" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MagicCube.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="58" column="102" selection-start-line="58" selection-start-column="102" selection-end-line="58" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#897#1111#0" />
+            <element signature="e#2223#2485#0" />
+            <element signature="e#2558#2594#0" />
+            <element signature="e#2733#2778#0" />
+            <element signature="e#2842#2908#0" />
+            <element signature="e#2999#3045#0" />
+            <element signature="e#3178#3215#0" />
+            <element signature="e#3315#3352#0" />
+            <element signature="e#4108#4451#0" />
+            <element signature="e#4488#4515#0" />
+            <element signature="e#4552#4605#0" />
+            <element signature="e#4641#4728#0" />
+            <element signature="e#4810#4900#0" />
+            <element signature="e#5048#5698#0" />
+            <element signature="e#5797#5940#0" />
+            <element signature="e#6299#6575#0" />
+            <element signature="e#6677#6820#0" />
+            <element signature="e#7081#7182#0" />
+            <marker date="1558543060000" expanded="true" signature="2905:2986" ph="..." />
+            <marker date="1558543060000" expanded="true" signature="4559:4596" ph="..." />
+            <marker date="1558543060000" expanded="true" signature="4712:4814" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

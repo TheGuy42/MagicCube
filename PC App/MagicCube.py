@@ -2,7 +2,7 @@ import Client
 from time import sleep
 from keyboard import Keyboard
 import logging
-from configuration import AppConfig
+#from configuration import AppConfig
 import tk_interface
 import tkinter as tk
 from tkinter import messagebox
@@ -50,11 +50,13 @@ class Configure:
 
     class AppDefaultSettings:
         def __init__(self, MagicCubeObj):
+            self.pi_hostname = "MagicCube"
+            self.port = 123
             self.CountBufferLength = 25
             self.GyroValueFactor = 10
             # Dictionary for function settings
             self.AppFunctionDict = {'change volume': {'call': MagicCubeObj.Change_Volume, 'threshold': 10},
-                                    'change song': {'call': MagicCubeObj.Change_Song, 'threshold': 110},
+                                    'change song': {'call': MagicCubeObj.Change_Song, 'threshold': 100},
                                     'switch windows': {'call': MagicCubeObj.Switch_Windows, 'threshold': 10},
                                     'switch desktops': {'call': MagicCubeObj.Switch_Desktop, 'threshold': 110}}
             # function key list for corresponding face
@@ -111,12 +113,12 @@ class MagicCube:
     Request_Run = '10'
     Request_Stop = '11'
 
-    def __init__(self, port):
+    def __init__(self):
         # initialize settings Object and apply settings to cube object
         self.Config = Configure(self)
         self.Settings = self.Config.AppSettings
         # initialize a socket
-        self.Socket = Client.Client(port)
+        self.Socket = Client.Client(self.Settings.port)
 
         self.LastAxis = 0
         self.Data = {'CurrentAxis': 0,
@@ -178,7 +180,7 @@ class MagicCube:
         return sumOfMovement
 
     # change volumed
-    def Change_Volume(self, threshold=AppConfig.Face1_sensitivity):
+    def Change_Volume(self, threshold):
         result = self.count(threshold)
 
         while result is not False:
@@ -186,14 +188,14 @@ class MagicCube:
             change_volume(result)
 
     # change songs
-    def Change_Song(self, threshold=AppConfig.Face2_sensitivity):
+    def Change_Song(self, threshold):
         result = self.count(threshold)
         while result is not False:
             result = self.count(threshold)
             change_song(result, AfterDelay=0.2)
 
     # switch between windows
-    def Switch_Windows(self, threshold=AppConfig.Face3_sensitivity):
+    def Switch_Windows(self, threshold):
         Keyboard.keyDown(Keyboard.VK_ALT)
         Keyboard.key(Keyboard.VK_TAB)
 
@@ -205,7 +207,7 @@ class MagicCube:
         Keyboard.keyUp(Keyboard.VK_ALT)
 
     # Change Desktops
-    def Switch_Desktop(self, threshold=AppConfig.face4_sensitivity):
+    def Switch_Desktop(self, threshold):
 
         result = self.count(threshold)
         while result is not False:
@@ -227,14 +229,13 @@ class MagicCube:
 
 
 class Graphic_Interface:
-    port = 123
 
     def __init__(self):
         # initialize and start the main GUI
         self.MainWindow = tk_interface.GUI()
         self.main_window()
         # initialize and start the Cube Object
-        self.Cube = MagicCube(self.port)
+        self.Cube = MagicCube()
         self.ConfigWindow = None
         self.IP = None
 
@@ -322,9 +323,9 @@ class Graphic_Interface:
             self.MW_Button_Start['text'] = 'Start'
 
 
-Cube = MagicCube(123)
+Cube = MagicCube()
 # can connect via hostname/ip
-Cube.connect(AppConfig.pi_hostname)
+Cube.connect(Cube.Settings.pi_hostname)
 Cube.send(Cube.Request_Run)
 Cube.ReadValues = True
 
