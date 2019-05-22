@@ -38,10 +38,12 @@ Note: better if you set your ip to be static. if you do so you will be able to c
 11.  connect the mpu-6050 to the pi(make sure vcc is connected to to 3.3v)
 12. connect the neopixels(also to 3.3v), the data pin goes to BCM18. according to this [pinout](https://pinout.xyz/)
 
+In the config file(inside the MagicCube folder) you will be able to change settings such as led preset colors, thresholds and add new colors. also note you **will need to change** the led's order in the presets as it will change if you solder/glue them differently than i did.
+
 After the raspberry pi is working you can connect the battery, switch and charger
 the pi connects to the switch and the battery and led's directly to the charger out pins.
-
-In the config file(inside the MagicCube folder) you will be able to change settings such as led preset colors, thresholds and add new colors. also note you **will need to change** the led's order in the presets as it will change if you solder/glue them differently than i did.
+you should run the program through ssh with the command `sudo python3 MagicCube.py` make the file run at boot.
+At the first time you run the program will calibrate the gyro and accelerometer, **follow the stages**.
 
 ## The physical cube
 The cube itself is 80x80x80 mm with two 35.355mm Isosceles triangles on opposing side in order to rest the cube when not in use.
