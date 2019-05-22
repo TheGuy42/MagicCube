@@ -5,6 +5,7 @@ The cube connects to the computer, and an app on the computer controls it accord
 The project was written and tested with **python 3**. make sure to use it on the raspberry pi and pc.
 
 You can see pictures for reference on [imgur](https://imgur.com/a/eOWr2kO).
+You can also see a video on [youtube](https://www.youtube.com/watch?v=zX449j0VkWc&feature=youtu.be)
 
 ## Preparing pc
 1. Make sure you have python 3 installed
