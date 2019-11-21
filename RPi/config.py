@@ -29,13 +29,13 @@ class Color:
     PURPLE = (90, 20, 255)
 
     # Presets
-    PRST_Default = {'Color': [GREEN, BLUE, RED, WHITE, ORANGE, PURPLE],
+    PRST_Default = {'Color': [RED, BLUE, ORANGE, GREEN, WHITE, PURPLE],
                     'Brightness': DefaultBrightness}
 
     PRST_OFF = {'Color': [OFF, OFF, OFF, OFF, OFF, OFF],
                 'Brightness': DefaultBrightness}
 
-    PRST_ON_EDGE = {'Color': [GREEN, BLUE, RED, WHITE, ORANGE, PURPLE],
+    PRST_ON_EDGE = {'Color': [RED, BLUE, ORANGE, GREEN, WHITE, PURPLE],
                     'Brightness': DefaultBrightness}
 
     PRST_FACE0 = {'Color': [OFF, OFF, OFF, GREEN, OFF, OFF],

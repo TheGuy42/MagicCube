@@ -50,6 +50,7 @@ class MagicCube:
         self.MPU = MPU_6050()
 
         self.server = Server.Server(CubeConfig.ip, CubeConfig.port)
+
         self.accept_connection()
 
         self.led = LED_Interface.LED(6)

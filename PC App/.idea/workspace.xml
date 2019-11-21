@@ -53,18 +53,32 @@
     <session id="-911224584">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="27" />
+          <entry key="py" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="27" />
+          <entry key="Python" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -76,31 +90,16 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/MagicCube.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="58" column="102" selection-start-line="58" selection-start-column="102" selection-end-line="58" selection-end-column="102" />
+                <state relative-caret-position="398">
+                  <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
-                    <element signature="e#897#1111#0" />
-                    <element signature="e#2223#2485#0" />
-                    <element signature="e#2558#2594#0" />
-                    <element signature="e#2733#2778#0" />
-                    <element signature="e#2842#2908#0" />
-                    <element signature="e#2999#3045#0" />
-                    <element signature="e#3178#3215#0" />
-                    <element signature="e#3315#3352#0" />
-                    <element signature="e#4108#4451#0" />
-                    <element signature="e#4488#4515#0" />
-                    <element signature="e#4552#4605#0" />
-                    <element signature="e#4641#4728#0" />
-                    <element signature="e#4810#4900#0" />
-                    <element signature="e#5048#5698#0" />
-                    <element signature="e#5797#5940#0" />
-                    <element signature="e#6299#6575#0" />
-                    <element signature="e#6677#6820#0" />
-                    <element signature="e#7081#7182#0" />
-                    <marker date="1558543060000" expanded="true" signature="2905:2986" ph="..." />
-                    <marker date="1558543060000" expanded="true" signature="4559:4596" ph="..." />
-                    <marker date="1558543060000" expanded="true" signature="4712:4814" ph="..." />
+                    <element signature="e#5849#5992#0" />
+                    <element signature="e#6059#6215#0" />
+                    <element signature="e#6295#6571#0" />
+                    <element signature="e#6645#6788#0" />
+                    <element signature="e#7183#10290#0" />
+                    <element signature="e#10595#10922#1" />
                   </folding>
                 </state>
               </provider>
@@ -111,9 +110,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="132">
                   <caret line="7" column="12" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -123,46 +119,13 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/MagicCube.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="277">
-                  <caret line="85" selection-start-line="85" selection-end-line="85" />
-                  <folding>
-                    <element signature="e#0#13#0" expanded="true" />
-                    <element signature="e#897#1111#0" />
-                    <element signature="e#2223#2485#0" />
-                    <element signature="e#2558#2594#0" />
-                    <element signature="e#2842#2908#0" />
-                    <element signature="e#2999#3045#0" />
-                    <element signature="e#3178#3215#0" />
-                    <element signature="e#3315#3352#0" />
-                    <element signature="e#4108#4451#0" />
-                    <element signature="e#4488#4515#0" />
-                    <element signature="e#4552#4605#0" />
-                    <element signature="e#4641#4728#0" />
-                    <element signature="e#4810#4900#0" />
-                    <element signature="e#5048#5698#0" />
-                    <element signature="e#5797#5940#0" />
-                    <element signature="e#6035#6191#0" />
-                    <element signature="e#6299#6575#0" />
-                    <element signature="e#6677#6820#0" />
-                    <element signature="e#7081#7182#0" />
-                    <marker date="1558543060000" expanded="true" signature="2905:2986" ph="..." />
-                    <marker date="1558543060000" expanded="true" signature="4559:4596" ph="..." />
-                    <marker date="1558543060000" expanded="true" signature="4712:4814" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Client.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+                <state relative-caret-position="44">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" />
                   <folding>
                     <element signature="e#0#50#0" expanded="true" />
-                    <marker date="1558451492000" expanded="true" signature="770:804" ph="..." />
+                    <marker date="1558455092000" expanded="true" signature="770:804" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -171,10 +134,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/configuration.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="44">
-                  <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+                <state relative-caret-position="198">
+                  <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
                   <folding>
-                    <marker date="1558451476000" expanded="true" signature="430:456" ph="..." />
+                    <marker date="1558455076000" expanded="true" signature="430:456" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -204,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_5/config.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_7/Server.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_2_6/MagicCube.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/103484222_7_10/config.py" />
@@ -254,15 +216,16 @@
         <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_0/config.py" />
         <option value="$PROJECT_DIR$/configuration.py" />
         <option value="$PROJECT_DIR$/Client.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/462142_4_1/MagicCube.py" />
         <option value="$PROJECT_DIR$/MagicCube.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-14" />
-    <option name="y" value="-14" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
     <option name="width" value="3864" />
-    <option name="height" value="2135" />
+    <option name="height" value="2124" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -270,18 +233,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Magic Cube" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Magic Cube" type="462c0819:PsiDirectoryNode" />
+              <item name="PC App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PC App" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,15 +409,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2208" height="1208" extended-state="6" />
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49262202" visible="true" weight="0.12569061" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49262202" visible="true" weight="0.124901496" />
       <window_info id="Structure" order="1" sideWeight="0.507378" side_tool="true" weight="0.12569061" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32992566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49861878" visible="true" weight="0.18122676" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49861878" visible="true" weight="0.17784712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30390334" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -491,11 +454,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Google Drive/MagicCube/venv/Lib/site-packages/pip-10.0.1-py3.7.egg/pip/_vendor/cachecontrol/_cmd.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QT/MagicCube/mainwindows.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/264396_2_0/MagicCube.py" />
     <entry file="file://$PROJECT_DIR$/keyboard.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -559,20 +517,8 @@
     <entry file="file://$PROJECT_DIR$/Raspberry Pi backup 11 APRIL/MagicCube/MagicCube.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_6/config.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/331018_2_7/MagicCube.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_2/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_2_0/MagicCube.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_2/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_2_0/MagicCube.py" />
     <entry file="file://$PROJECT_DIR$/tk_interface.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -580,97 +526,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_1/Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_0/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_1/Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_2/MagicCube.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/788748_4_1/Server.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_0/config.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_1/Server.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/265778_2_2/MagicCube.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/462142_4_1/MagicCube.py" />
+    <entry file="file://$PROJECT_DIR$/../RPi/mpu6050.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pickle_Interface.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
-            <marker date="1558451492000" expanded="true" signature="770:804" ph="..." />
+            <marker date="1558455092000" expanded="true" signature="770:804" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/configuration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        <state relative-caret-position="198">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
-            <marker date="1558451476000" expanded="true" signature="430:456" ph="..." />
+            <marker date="1558455076000" expanded="true" signature="430:456" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Mxt109/RemoteFiles/68732_2_2/mpu6050_Interface.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/MagicCube.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="58" column="102" selection-start-line="58" selection-start-column="102" selection-end-line="58" selection-end-column="102" />
+        <state relative-caret-position="398">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#897#1111#0" />
-            <element signature="e#2223#2485#0" />
-            <element signature="e#2558#2594#0" />
-            <element signature="e#2733#2778#0" />
-            <element signature="e#2842#2908#0" />
-            <element signature="e#2999#3045#0" />
-            <element signature="e#3178#3215#0" />
-            <element signature="e#3315#3352#0" />
-            <element signature="e#4108#4451#0" />
-            <element signature="e#4488#4515#0" />
-            <element signature="e#4552#4605#0" />
-            <element signature="e#4641#4728#0" />
-            <element signature="e#4810#4900#0" />
-            <element signature="e#5048#5698#0" />
-            <element signature="e#5797#5940#0" />
-            <element signature="e#6299#6575#0" />
-            <element signature="e#6677#6820#0" />
-            <element signature="e#7081#7182#0" />
-            <marker date="1558543060000" expanded="true" signature="2905:2986" ph="..." />
-            <marker date="1558543060000" expanded="true" signature="4559:4596" ph="..." />
-            <marker date="1558543060000" expanded="true" signature="4712:4814" ph="..." />
+            <element signature="e#5849#5992#0" />
+            <element signature="e#6059#6215#0" />
+            <element signature="e#6295#6571#0" />
+            <element signature="e#6645#6788#0" />
+            <element signature="e#7183#10290#0" />
+            <element signature="e#10595#10922#1" />
           </folding>
         </state>
       </provider>

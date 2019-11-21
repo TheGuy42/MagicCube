@@ -60,7 +60,7 @@ class Configure:
                                     'switch windows': {'call': MagicCubeObj.Switch_Windows, 'threshold': 10},
                                     'switch desktops': {'call': MagicCubeObj.Switch_Desktop, 'threshold': 110}}
             # function key list for corresponding face
-            self.Func_Key = ['change song', 'change volume', 'change song', 'switch windows', 'switch desktops', None]
+            self.Func_Key = ['switch desktops', 'switch windows', None, 'change song', 'change volume', None]
 
     AppSettingsPath = "AppSettings.pickle"
 
@@ -124,7 +124,7 @@ class MagicCube:
         self.Data = {'CurrentAxis': 0,
                      'GyroValue': 0}
         self.connected = False
-        self.ReadValues = False
+        self.ReardValues = False
 
     # update the last axis variable and read new data
     # TODO: check if no factor is viable
