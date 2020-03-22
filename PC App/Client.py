@@ -13,6 +13,7 @@ class Client:
         #
         # self.Data = dict()
 
+    # connect to the cube, throws exception if failed
     def connect(self, server_ip):
         try:
             self.Socket.connect((server_ip, self.port))
