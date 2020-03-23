@@ -16,8 +16,6 @@ class AppConfig:
     Face_Func = [None, None, None, None, None, None]
 
 
-
-
 import tkinter as tk
 
 
@@ -43,6 +41,37 @@ class GUIConfig:
     LabelBD = 1
     LabelRelief = tk.FLAT
     LabelWidth = 10
+
+
+class GUI_Queue:
+
+    GUIRequest = {'Connect': 10,
+                  'Disconnect': 11,
+                  'Start': 12,
+                  'Stop': 13,
+                  'CubeState': 14}
+
+    CubeState = {'Connected': False,
+                 'ReadValues': False,
+                 'IP': None,
+                 'CurrentFace': None}
+
+    def __init__(self, Queue):
+        self.Queue = Queue
+
+    def put_connect(self, ip):
+        request = [self.GUIRequest['Connect'], ip]
+        self.Queue.put(request)
+
+    def put_disconnect(self):
+        self.Queue.put(self.GUIRequest['Disconnect'])
+
+    def put_start(self):
+        self.Queue.put(self.GUIRequest['Start'])
+
+    def put_stop(self):
+        self.Queue.put(self.GUIRequest['Stop'])
+
 
 
 

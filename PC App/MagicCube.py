@@ -9,6 +9,7 @@ from tkinter import messagebox
 from Pickle_Interface import Pickler
 
 import multiprocessing
+import queue
 
 logging.basicConfig(level=logging.INFO)
 logging.info("=======================")
@@ -22,7 +23,7 @@ def arrow_key(value, AfterDelay=1.0):
     sleep(AfterDelay)
 
 
-def change_volume(iterator, threshold):
+def change_volume(iterator, threshold, AfterDelay):
     result = iterator(threshold)
     while result is not False:
         result = iterator(threshold)
@@ -31,8 +32,10 @@ def change_volume(iterator, threshold):
         elif result > 0:
             Keyboard.key(Keyboard.VK_VOLUME_UP)
 
+    sleep(AfterDelay)
 
-def change_song(iterator, threshold, AfterDelay=0.3):
+
+def change_song(iterator, threshold, AfterDelay):
     result = iterator(threshold)
     while result is not False:
         result = iterator(threshold)
@@ -43,7 +46,7 @@ def change_song(iterator, threshold, AfterDelay=0.3):
         sleep(AfterDelay)
 
 
-def change_desktop(iterator, threshold, AfterDelay=1.0):
+def change_desktop(iterator, threshold, AfterDelay):
     result = iterator(threshold)
     while result is not False:
         result = iterator(threshold)
@@ -57,7 +60,7 @@ def change_desktop(iterator, threshold, AfterDelay=1.0):
     sleep(AfterDelay)
 
 
-def change_window(iterator, threshold, AfterDelay=1.0):
+def change_window(iterator, threshold, AfterDelay):
     Keyboard.keyDown(Keyboard.VK_ALT)
     Keyboard.key(Keyboard.VK_TAB)
 
@@ -80,10 +83,10 @@ class Configure:
             self.CountBufferLength = 25
             self.GyroValueFactor = 10
             # Dictionary for function settings
-            self.AppFunctionDict = {'change volume': {'call': change_volume, 'threshold': 10},
-                                    'change song': {'call': change_song, 'threshold': 100},
-                                    'switch windows': {'call': change_window, 'threshold': 10},
-                                    'switch desktops': {'call': change_desktop, 'threshold': 110}}
+            self.AppFunctionDict = {'change volume': {'call': change_volume, 'threshold': 10, 'AfterDelay': 0},
+                                    'change song': {'call': change_song, 'threshold': 100, 'AfterDelay': 0.3},
+                                    'switch windows': {'call': change_window, 'threshold': 10, 'AfterDelay': 1.0},
+                                    'switch desktops': {'call': change_desktop, 'threshold': 110, 'AfterDelay': 1.0}}
             # function key list for corresponding face
             self.Func_Key = ['switch desktops', 'switch windows', None, 'change song', 'change volume', None]
 
@@ -125,6 +128,83 @@ class Configure:
     # apply the app settings changes to the cube object
     def apply_app_settings(self):
         self.Cube.Settings = self.AppSettings
+
+
+class CubeProcess:
+
+    class Cube_Queue:
+
+        GUIRequest = {'Connect': 10,
+                      'Disconnect': 11,
+                      'Start': 12,
+                      'Stop': 13,
+                      'CubeState': 14}
+
+        CubeState = {'Connected': False,
+                     'ReadValues': False,
+                     'IP': None,
+                     'CurrentFace': None}
+
+        def __init__(self, Queue):
+            self.Queue = Queue
+            self.Request = list()
+
+        # fetch a request
+        # return True if request fetched
+        # return False if Queue is empty
+        def get_request(self):
+            try:
+                self.Request = self.Queue.get_nowait()  #
+                return True
+            except queue.Empty:
+                return False
+
+    def __init__(self, Queue):
+        self.Cube = MagicCube()
+        self.Queue = self.Cube_Queue(Queue)
+        self.CubeState = 1
+
+    # start reading values:
+    # send cube request to send values
+    def start(self):
+        self.Cube.send(self.Cube.Request_Run)
+        self.Cube.ReadValues = True
+
+    # stop reading values:
+    # send cube request to stop sending values
+    def stop(self):
+        self.Cube.send(self.Cube.Request_Stop)
+        self.Cube.ReadValues = False
+
+    def handle_request(self):
+        if self.Queue.Request[0] == self.Queue.GUIRequest['Connect']:  # if request is to connect
+            self.Cube.connect(self.Queue.Request[1])
+
+        elif self.Queue.Request[0] == self.Queue.GUIRequest['Disconnect']:  # if request is to disconnect
+            self.Cube.disconnect()
+
+        elif self.Queue.Request[0] == self.Queue.GUIRequest['start']:  # if request is to start reading values
+            self.start()
+
+        elif self.Queue.Request[0] == self.Queue.GUIRequest['stop']:  # if request is to stop reading values
+            self.stop()
+
+    def main(self):
+        while True:
+            if self.Queue.get_request():
+                self.handle_request()
+                continue
+
+            if self.Cube.connected:
+                if self.Cube.ReadValues:
+                    try:
+                        self.Cube.main()
+                    except EOFError:
+                        self.Cube.disconnect()
+                        # TODO: send GUI info that cube disconnected
+                    except Client.socket.timeout:
+                        self.Cube.disconnect()
+                        # TODO: send GUI info that cube disconnected
 
 
 class MagicCube:
@@ -174,8 +254,11 @@ class MagicCube:
         self.connected = True
 
     def disconnect(self):
+        if self.ReadValues:
+            self.send(self.Request_Stop)
+            self.ReadValues = False
+
         self.Socket.disconnect()
-        self.ReadValues = False
         self.connected = False
 
     # connect or disconnect according to current state
@@ -208,7 +291,7 @@ class MagicCube:
         return False
 
     # calculate the sum of last 'BufferLength' values
-    # if sum is bigger than 'threshold' return True
+    # if sum is bigger than 'threshold' return the sum of movement including the direction(+/- sign)
     # if changed axis return False
     def count(self, threshold):
         BufferLength = self.Settings.CountBufferLength
@@ -230,50 +313,15 @@ class MagicCube:
             index = index % BufferLength
         return sumOfMovement
 
-"""
-
-    # change volumed
-    def Change_Volume(self, threshold):
-        result = self.count(threshold)
-
-        while result is not False:
-            result = self.count(threshold)
-            change_volume(result)
-
-    # change songs
-    def Change_Song(self, threshold):
-        result = self.count(threshold)
-        while result is not False:
-            result = self.count(threshold)
-            change_song(result, AfterDelay=0.2)
-
-    # switch between windows
-    def Switch_Windows(self, threshold):
-        Keyboard.keyDown(Keyboard.VK_ALT)
-        Keyboard.key(Keyboard.VK_TAB)
-
-        result = self.count(threshold)
-        while result is not False:
-            result = self.count(threshold)
-            arrow_key(result, AfterDelay=0.6)
-
-        Keyboard.keyUp(Keyboard.VK_ALT)
-
-    # Change Desktops
-    def Switch_Desktop(self, threshold):
-
-        result = self.count(threshold)
-        while result is not False:
-            result = self.count(threshold)
-            change_desktop(result)
-"""
     # call the configured function based on the current face
     def call(self, face):
         FuncKey = self.Settings.Func_Key[face]
         if FuncKey is not None:
             FuncDict = self.Settings.AppFunctionDict[FuncKey]
-            FuncDict['call'](self.count, FuncDict['threshold'])
-            #FuncDict['call'](threshold=FuncDict['threshold'])
+            args = list(FuncDict.values())  # the values of the function to be called(parameters)
+            args.pop(0)  # remove the function call object from arg list
+
+            FuncDict['call'](self.count, *args)
 
     def main(self):
 
@@ -378,20 +426,12 @@ class Graphic_Interface:
             self.connect_disconnect()
             self.MW_Button_Start['text'] = 'Start'
 
-
+"""
 Cube = MagicCube()
 # can connect via hostname/ip
 Cube.connect(Cube.Settings.pi_hostname)
 Cube.send(Cube.Request_Run)
 Cube.ReadValues = True
-
-
-def a():
-    with multiprocessing.Manager() as manager:
-        request_dict = manager.dict()
-        request_dict['flag'] = multiprocessing.Event()
-        request_dict['lock'] = multiprocessing.Lock()
-        request_dict['toggle_connect'] = False
 
 
 while True:
@@ -415,11 +455,10 @@ try:
         if app.Cube is not None:
             if app.Cube.connected:
                 if app.Cube.ReadValues:
-                    Lock = threading.Lock()
-                    main = threading.Thread(target=app.Run, args=(Lock, ))
+                    app.Run()
 
 except tk.TclError:
     print()
 
-"""
+
 
