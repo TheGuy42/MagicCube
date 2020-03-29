@@ -23,55 +23,34 @@ class GUIConfig:
 
     WindowBG = "#4A4A4A"
 
-    ButtonBG = "#363636"
-    ButtonActiveBG = "#242424"
-    ButtonFG = "#EBEBEB"
-    ButtonActiveFG = "#EBEBEB"
-    ButtonBD = 2
-    ButtonRelief = tk.FLAT
+    Button = {'background': "#363636",
+              'activebackground': "#242424",
+              'foreground': "#EBEBEB",
+              'activeforeground': "#EBEBEB",
+              'border': 1,
+              'relief': tk.FLAT}
 
-    EntryBG = "#363636"
-    EntryFG = "#EBEBEB"
-    EntryBD = 1
-    EntryRelief = tk.FLAT
-    EntryWidth = 15
+    Entry = {'background': "#363636",
+             'foreground': "#EBEBEB",
+             'border': 2,
+             'relief': tk.FLAT,
+             'width': 15}
 
-    LabelBG = "#4A4A4A"
-    LabelFG = "#EBEBEB"
-    LabelBD = 1
-    LabelRelief = tk.FLAT
-    LabelWidth = 10
+    Label = {'background': "#4A4A4A",
+             'foreground': "#EBEBEB",
+             'border': 1,
+             'relief': tk.FLAT,
+             'width': 10}
 
 
-class GUI_Queue:
+class MultiProcess_config:
 
-    GUIRequest = {'Connect': 10,
+    GUIRequest = {'EndProcess': -1,
+                  'Connect': 10,
                   'Disconnect': 11,
                   'Start': 12,
                   'Stop': 13,
-                  'CubeState': 14}
-
-    CubeState = {'Connected': False,
-                 'ReadValues': False,
-                 'IP': None,
-                 'CurrentFace': None}
-
-    def __init__(self, Queue):
-        self.Queue = Queue
-
-    def put_connect(self, ip):
-        request = [self.GUIRequest['Connect'], ip]
-        self.Queue.put(request)
-
-    def put_disconnect(self):
-        self.Queue.put(self.GUIRequest['Disconnect'])
-
-    def put_start(self):
-        self.Queue.put(self.GUIRequest['Start'])
-
-    def put_stop(self):
-        self.Queue.put(self.GUIRequest['Stop'])
-
+                  'CubeState': 15}
 
 
 

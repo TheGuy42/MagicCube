@@ -2,16 +2,16 @@ import Client
 from time import sleep
 from keyboard import Keyboard
 import logging
-#from configuration import AppConfig
+import configuration
 import tk_interface
-import tkinter as tk
-from tkinter import messagebox
+from sys import exit
 from Pickle_Interface import Pickler
+import os
 
 import multiprocessing
 import queue
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 logging.info("=======================")
 
 
@@ -75,7 +75,6 @@ def change_window(iterator, threshold, AfterDelay):
 
 
 class Configure:
-
     class AppDefaultSettings:
         def __init__(self):
             self.pi_hostname = "MagicCube"
@@ -103,7 +102,7 @@ class Configure:
         if tmp is not None:
             self.AppSettings = tmp
         else:
-            print('load config error')
+            logging.warning('load config error')
             #messagebox.showwarning('Configuration', 'No configuration file found!\nload_app_settings()')
 
     # save settings to a pickle file
@@ -131,14 +130,9 @@ class Configure:
 
 
 class CubeProcess:
-
     class Cube_Queue:
 
-        GUIRequest = {'Connect': 10,
-                      'Disconnect': 11,
-                      'Start': 12,
-                      'Stop': 13,
-                      'CubeState': 14}
+        GUIRequest = configuration.MultiProcess_config.GUIRequest
 
         CubeState = {'Connected': False,
                      'ReadValues': False,
@@ -154,15 +148,16 @@ class CubeProcess:
         # return False if Queue is empty
         def get_request(self):
             try:
-                self.Request = self.Queue.get_nowait()  #
+                self.Request = self.Queue.get_nowait()
                 return True
             except queue.Empty:
                 return False
 
     def __init__(self, Queue):
+        logging.info("Cube process created")
         self.Cube = MagicCube()
         self.Queue = self.Cube_Queue(Queue)
-        self.CubeState = 1
+        self.main()
 
     # start reading values:
     # send cube request to send values
@@ -176,6 +171,7 @@ class CubeProcess:
         self.Cube.send(self.Cube.Request_Stop)
         self.Cube.ReadValues = False
 
+    # handle requests sent by GUI
     def handle_request(self):
         if self.Queue.Request[0] == self.Queue.GUIRequest['Connect']:  # if request is to connect
             self.Cube.connect(self.Queue.Request[1])
@@ -183,11 +179,19 @@ class CubeProcess:
         elif self.Queue.Request[0] == self.Queue.GUIRequest['Disconnect']:  # if request is to disconnect
             self.Cube.disconnect()
 
-        elif self.Queue.Request[0] == self.Queue.GUIRequest['start']:  # if request is to start reading values
+        elif self.Queue.Request[0] == self.Queue.GUIRequest['Start']:  # if request is to start reading values
             self.start()
 
-        elif self.Queue.Request[0] == self.Queue.GUIRequest['stop']:  # if request is to stop reading values
+        elif self.Queue.Request[0] == self.Queue.GUIRequest['Stop']:  # if request is to stop reading values
             self.stop()
+
+        elif self.Queue.Request[0] == self.Queue.GUIRequest['EndProcess']:  # end the Cube process
+            if self.Cube.connected:
+                if self.Cube.ReadValues:
+                    self.stop()
+                self.Cube.disconnect()
+            self.Queue.Queue.close()
+            exit()
 
     def main(self):
         while True:
@@ -331,48 +335,65 @@ class MagicCube:
 
 
 class Graphic_Interface:
+    AppPath = os.path.dirname(os.path.realpath(__file__))
 
-    def __init__(self):
+    def __init__(self, Queue, exit_protocol):
+        self.Queue = Queue
         # initialize and start the main GUI
-        self.MainWindow = tk_interface.GUI()
+        self.MainWindow = tk_interface.GUI(exit_protocol=exit_protocol)
         self.main_window()
         # initialize and start the Cube Object
-        self.Cube = MagicCube()
         self.ConfigWindow = None
         self.IP = None
 
     def main_window(self):
-        self.MW_Label_IP = self.MainWindow.Lable('IP:')
-        self.MW_Label_IP.grid(row=0, column=0, pady=3)
+        # Row: 0
+        Row = 0
+        self.config_icon = self.MainWindow.get_image(self.AppPath + "\settings-icon20.png")
+        self.MW_Button_Configure = self.MainWindow.Button(' Configure ', self.config_window, **configuration.GUIConfig.Button)
+        self.MW_Button_Configure.configure(image=self.config_icon, background='#4A4A4A',
+                                           relief=tk_interface.tk.RAISED, compound='left')
+        self.MW_Button_Configure.grid(row=Row, column=0, padx=15, pady=3)
 
-        self.MW_Entry_IP = self.MainWindow.Entry()
-        self.MW_Entry_IP.grid(row=0, column=1, pady=3)
+        # Row: 1
+        Row += 1
+        self.MW_Label_IP = self.MainWindow.Label('IP:', **configuration.GUIConfig.Label)
+        self.MW_Label_IP.grid(row=Row, column=0, pady=3)
 
-        self.MW_Button_Connect = self.MainWindow.Button('Connect', self.connect_disconnect)
-        self.MW_Button_Connect.grid(row=0, column=2, padx=15, pady=3)
+        self.MW_Entry_IP = self.MainWindow.Entry(**configuration.GUIConfig.Entry)
+        self.MW_Entry_IP.bind("<Key-Return>", lambda event: self.connect_disconnect())
+        self.MW_Entry_IP.grid(row=Row, column=1, pady=3)
 
-        self.MW_Label_Status_static = self.MainWindow.Lable('Status:')
-        self.MW_Label_Status_static.grid(row=1, column=0, pady=3)
+        self.MW_Button_Connect = self.MainWindow.Button('Connect', self.connect_disconnect, **configuration.GUIConfig.Button)
+        self.MW_Button_Connect.grid(row=Row, column=2, padx=15, pady=3)
 
-        self.MW_Label_Status = self.MainWindow.Lable('Disconnected')
-        self.MW_Label_Status.grid(row=1, column=1, pady=3)
+        # Row: 1
+        Row += 1
+        self.MW_Label_Status_static = self.MainWindow.Label('Status:', **configuration.GUIConfig.Label)
+        self.MW_Label_Status_static.grid(row=Row, column=0, pady=3)
 
-        self.MW_Button_Start = self.MainWindow.Button('Start', self.start_stop)
-        self.MW_Button_Start.grid(row=2, column=0, pady=3)
+        self.MW_Label_Status = self.MainWindow.Label('Disconnected', **configuration.GUIConfig.Label)
+        self.MW_Label_Status.grid(row=Row, column=1, pady=3)
+
+        # Row: 2
+        Row += 1
+        self.MW_Button_Start = self.MainWindow.Button('Start', self.start_stop, **configuration.GUIConfig.Button)
+        self.MW_Button_Start.grid(row=Row, column=0, pady=3)
 
     def config_window(self):
-        self.ConfigWindow = tk_interface.GUI(title='Configuration')
+        self.ConfigWindow = tk_interface.GUI(title="MagicCube - Configuration", TopLevel=True)  # TODO: add exit_protocol()
+
 
     @staticmethod
     def valid_ip(ip):
         if len(ip) > 15:
-            print('long ip')
+            logging.warning('valid_ip(): long ip')
             return False
 
         try:
             a, b, c, d = ip.split('.')
         except ValueError:
-            print('split error')
+            logging.warning('valid_ip(): split error')
             return False
 
         if 0 <= int(a) < 255 and 0 <= int(b) < 255 and 0 <= int(c) < 255 and 0 <= int(d) < 255:
@@ -386,45 +407,50 @@ class Graphic_Interface:
         else:
             self.IP = None
 
+    # send request to connect and update local variables
+    def connect(self):
+        self.get_ip()
+        if self.IP is not None and self.Queue.CubeState['Connected'] is False:
+            self.Queue.put_connect(self.IP)
+            self.MW_Label_Status['text'] = 'Connected'
+            self.MW_Button_Connect['text'] = "Disconnect"
+
+    # send request to disconnect and update local variables
+    def disconnect(self):
+        if self.Queue.CubeState['ReadValues']:
+            self.start_stop()
+        self.Queue.put_disconnect()
+        self.MW_Label_Status['text'] = 'Disconnected'
+        self.MW_Button_Connect['text'] = "Connect"
+
     # connect and disconnect from the cube
     def connect_disconnect(self):
         # Disconnect
-        if self.Cube.connected:
-            if self.Cube.ReadValues:
-                self.start_stop()
-            self.Cube.disconnect()
-            self.MW_Label_Status['text'] = 'Disconnected'
-            self.MW_Button_Connect['text'] = "Connect"
+        if self.Queue.CubeState['Connected']:
+            self.disconnect()
         # Connect
         else:
-            self.get_ip()
-            if self.IP is not None and self.Cube.connected is False:
-                self.Cube.connect(self.IP)
-                self.MW_Label_Status['text'] = 'Connected'
-                self.MW_Button_Connect['text'] = "Disconnect"
+            self.connect()
+
+    # send request to start reading values from the cube and update local variables
+    def start_read_values(self):
+        self.Queue.put_start()
+        self.MW_Button_Start['text'] = 'Stop'
+        # self.MainWindow.master.iconify()
+
+    # send request to stop reading values from the cube and update local variables
+    def stop_read_values(self):
+        self.Queue.put_stop()
+        self.MW_Button_Start['text'] = 'Start'
 
     def start_stop(self):
         # stop
-        if self.Cube.ReadValues:
-            self.Cube.send(self.Cube.Request_Stop)
-            self.Cube.ReadValues = False
-            self.MW_Button_Start['text'] = 'Start'
+        if self.Queue.CubeState['ReadValues']:
+            self.stop_read_values()
         # start
         else:
-            self.Cube.send(self.Cube.Request_Run)
-            self.Cube.ReadValues = True
-            self.MW_Button_Start['text'] = 'Stop'
-            self.MainWindow.master.iconify()
+            self.start_read_values()
 
-    def Run(self):
-        try:
-            self.Cube.main()
-        except EOFError:
-            self.connect_disconnect()
-            self.MW_Button_Start['text'] = 'Start'
-        except Client.socket.timeout:
-            self.connect_disconnect()
-            self.MW_Button_Start['text'] = 'Start'
 
 """
 Cube = MagicCube()
@@ -446,19 +472,75 @@ while True:
 # GUI
 """
 
-app = Graphic_Interface()
 
-try:
-    while True:
-        tk.Tk.update_idletasks(app.MainWindow.master)
-        tk.Tk.update(app.MainWindow.master)
-        if app.Cube is not None:
-            if app.Cube.connected:
-                if app.Cube.ReadValues:
-                    app.Run()
+class GUIProcess:
+    class GUI_Queue:
 
-except tk.TclError:
-    print()
+        GUIRequest = configuration.MultiProcess_config.GUIRequest
 
+        CubeState = {'Connected': False,
+                     'ReadValues': False,
+                     'IP': None,
+                     'CurrentFace': None}
+
+        def __init__(self):
+            self.Queue = multiprocessing.Queue()
+
+        def put_connect(self, ip):
+            request = [self.GUIRequest['Connect'], ip]
+            self.Queue.put(request)
+            self.CubeState['Connected'] = True
+
+        def put_disconnect(self):
+            self.Queue.put([self.GUIRequest['Disconnect']])  # request is expected as a list!
+            self.CubeState['Connected'] = False
+
+        def put_start(self):
+            self.Queue.put([self.GUIRequest['Start']])  # request is expected as a list!
+            self.CubeState['ReadValues'] = True
+
+        def put_stop(self):
+            self.Queue.put([self.GUIRequest['Stop']])  # request is expected as a list!
+            self.CubeState['ReadValues'] = False
+
+        def put_end_process(self):
+            self.Queue.put([self.GUIRequest['EndProcess']])  # request is expected as a list!
+            self.CubeState['Connected'] = False
+            self.CubeState['ReadValues'] = False
+
+    def __init__(self):
+        self.Queue = self.GUI_Queue()
+        self.GUI = Graphic_Interface(self.Queue, self.exit)
+        self.Cube = multiprocessing.Process(target=CubeProcess, args=(self.GUI.Queue.Queue,))
+
+    def start(self):
+        self.Cube.start()
+        self.GUI.MainWindow.master.mainloop()
+        #self.exit()
+
+    def exit(self):
+        self.Queue.put_end_process()
+        self.Queue.Queue.close()
+        self.GUI.MainWindow.destroy()
+
+"""
+
+    def main(self):
+        try:
+            while True:
+                tk.Tk.update_idletasks(self.GUI.MainWindow.master)
+                tk.Tk.update(self.GUI.MainWindow.master)
+                if self.GUI.Cube is not None:
+                    if self.GUI.Cube.connected:
+                        if self.GUI.Cube.ReadValues:
+                            self.GUI.Run()
+
+        except tk.TclError:
+            print()
+"""
+
+if __name__ == '__main__':
+    GUI = GUIProcess()
+    GUI.start()
 
 

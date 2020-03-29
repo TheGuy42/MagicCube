@@ -5,56 +5,37 @@ from configuration import GUIConfig
 
 class GUI:
 
-    def __init__(self, title="MagicCube"):
-        self.master = tk.Tk()
+    def __init__(self, title="MagicCube", TopLevel=False, exit_protocol=None):
+        if TopLevel:
+            self.master = tk.Toplevel()
+        else:
+            self.master = tk.Tk()
         self.master.title(title)
         self.master.configure(background=GUIConfig.WindowBG)
-        #self.master.protocol('WM_DELETE_WINDOW',)
+        if exit_protocol is not None:
+            self.master.protocol('WM_DELETE_WINDOW', exit_protocol)
 
-    def _return_master(self, passedValue):
-        if passedValue is None:
-            return self.master
-        return passedValue
+    def Button(self, text, func, **style):
+        tmp = tk.Button(self.master, text=text, command=func)
+        tmp.configure(style)
 
-    def Button(self, text, func, master=None, bg=GUIConfig.ButtonBG, ActiveBG=GUIConfig.ButtonActiveBG,
-               fg=GUIConfig.ButtonFG, ActiveFG=GUIConfig.ButtonActiveFG, bd=GUIConfig.ButtonBD, relief=GUIConfig.ButtonRelief):
-
-        MainWindow = self._return_master(master)
-        tmp = tk.Button(MainWindow, text=text, command=func)
-        tmp.configure(background=bg,
-                      activebackground=ActiveBG,
-                      foreground=fg,
-                      activeforeground=ActiveFG,
-                      border=bd,
-                      relief=relief)
         return tmp
 
-    def Entry(self, master=None, bg=GUIConfig.EntryBG, fg=GUIConfig.EntryFG, bd=GUIConfig.EntryBD,
-              relief=GUIConfig.EntryRelief, width=GUIConfig.EntryWidth):
-
-        MainWindow = self._return_master(master)
-        tmp = tk.Entry(MainWindow)
-        tmp.configure(background=bg,
-                      foreground=fg,
-                      border=bd,
-                      relief=relief,
-                      width=width)
+    def Entry(self, **style):
+        tmp = tk.Entry(self.master)
+        tmp.configure(style)
         return tmp
 
-    def Lable(self, text, master=None, bg=GUIConfig.LabelBG, fg=GUIConfig.LabelFG, bd=GUIConfig.LabelBD,
-              relief=GUIConfig.LabelRelief, width=GUIConfig.LabelWidth):
-
-        MainWindow = self._return_master(master)
-        tmp = tk.Label(master=MainWindow, text=text)
-        tmp.configure(background=bg,
-                      foreground=fg,
-                      border=bd,
-                      relief=relief,
-                      width=width)
+    def Label(self, text, **style):
+        tmp = tk.Label(master=self.master, text=text)
+        tmp.configure(style)
         return tmp
 
-    @staticmethod
-    def messagebox(title, message):
-        messagebox.showinfo(title, message)
+    def get_image(self, path):
+        return tk.PhotoImage(file=path)
+
+    # close the GUI
+    def destroy(self):
+        self.master.destroy()
 
 
