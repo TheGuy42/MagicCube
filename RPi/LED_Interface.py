@@ -1,23 +1,24 @@
 from time import sleep
 import neopixel
 import board
-from config import Color
 
 
 class LED:
 
-    def __init__(self, NumOfPixels):
+    def __init__(self, NumOfPixels, settings):
         pixel_pin = board.D18
         self.NumOfPixels = NumOfPixels
         ORDER = neopixel.GRB
-        self.Settings = Color()
+        self.Settings = settings
         self.CurrentBrightness = self.Settings.DefaultBrightness
         self.pixel = neopixel.NeoPixel(pixel_pin, self.NumOfPixels, brightness=self.Settings.DefaultBrightness,
                                        auto_write=False, pixel_order=ORDER)
-        self.startup_effect()
+
+    def set_settings(self, settings):
+        self.Settings = settings
 
     def startup_effect(self):
-        self.set_preset(self.Settings.PRST_Default)
+        self.set_preset(self.Settings.PRST_ON_EDGE)
         self.brightness_rainbow_effect()
 
     def update(self):

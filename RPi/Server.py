@@ -8,6 +8,8 @@ class Server:
         self.host = socket.gethostname()
         self.port = port
         # self.ip = '10.0.0.30'
+        # Avoid bind() exception: OSError: [Errno 48] Address already in use
+        self.Socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         # start a socket
         self.Socket.bind((str(ip), self.port))
         self.Socket.listen(1)
@@ -25,7 +27,7 @@ class Server:
             if self.Client is not None:
                 self.Received = pickle.loads(self.Client.recv(size))
                 return True
-        except BlockingIOError:
+        except BlockingIOErrr: # Resource temporarily unavailable
             self.Received = None
             return False
 

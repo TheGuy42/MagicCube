@@ -1,9 +1,13 @@
-import Server
+#import Server
+import Server1 as Server
+import threading
 import mpu6050_Interface
 from time import sleep
 import LED_Interface
-from config import Color
-from config import CubeConfig
+from configuration import CubeDefaultSettings
+from configuration import CubeConfig
+from sys import exit
+
 
 
 class MPU_6050:
@@ -31,76 +35,106 @@ class MPU_6050:
             self.Data['GyroValue'] = 0
         else:
             self.Data['GyroValue'] = self.gyro.data[self.gyro.current_axis]
-        print(self.Data)
+        #print(self.Data)
 
     def changed_axis(self):
         if self.last_axis != self.Data['CurrentAxis']:
             return True
         return False
 
+    def get_data(self):
+        return self.Data
+
 
 class MagicCube:
-    Received_Data_Flag = 9
-    Command_Run = 10
-    Command_Stop = 11
+    Received_Data_Flag = '9'
+    Command = {'Start': '12',
+               'Stop': '13',
+               'Disconnect': '14'}
 
     def __init__(self):
-        self.Settings = Color()
-        self.Running = False
+        self.Settings = CubeDefaultSettings.ColorSettings()
+        self.send_values = False
         self.MPU = MPU_6050()
 
         self.server = Server.Server(CubeConfig.ip, CubeConfig.port)
+        self.led = LED_Interface.LED(6, self.Settings)
 
         self.accept_connection()
 
-        self.led = LED_Interface.LED(6)
+
 
     # wait for a connection
     def accept_connection(self):
         self.server.accept_connection()
+        self.server.receive() # Receive Cube Settings
+        self.process_request()
+        self.led.startup_effect()
         # server.send_tcp(Data)
 
     # ask if user want to reconnect and act accordingly
     def reconnect(self):
+        self.server.close_connection()
         ask = input("client disconnected, do you want to continue(Y/N)")
         if ask == 'y':
             self.accept_connection()
+            return True
         else:
-            self.led.set_preset(Color.PRST_OFF)
-            self.Running = False
+            self.led.set_preset(self.Settings.PRST_OFF)
+            self.send_values = False
             return False
 
     def process_request(self):
-        if type(self.server.Received) == str:
-            if self.server.Received == str(self.Command_Run):
-                self.Running = True
-            elif self.server.Received == str(self.Command_Stop):
-                self.Running = False
+        #print("type(self.server.data): " + str(type(self.server.data)))
+        if type(self.server.data) == str:
+            if self.server.data == self.Command['Start']:
+                self.send_values = True
 
-        elif type(self.server.Received) == type(Color):
-            self.Settings = self.server.Received
+            elif self.server.data == self.Command['Stop']:
+                self.send_values = False
+
+            elif self.server.data == self.Command['Disconnect']:
+                self.server.close_connection()
+                self.send_values = False
+                if not self.reconnect():
+                    exit()
+
+        elif type(self.server.data) == type(self.Settings):
+            print("==========Received color settings!==========")
+            self.update_settings()
+
+    def update_settings(self):
+        self.Settings = self.server.data
+        self.led.set_settings(self.Settings)
 
     def main(self):
-        while self.Running is False:
-            if self.server.recieve_tcp():
+        while self.send_values is False:
+            if self.server.receive():
                 self.process_request()
 
-        while self.Running:
+        while self.send_values:
             if self.run() == self.Received_Data_Flag:
                 self.process_request()
 
     # start sending the sensor data
     def run(self):
-        while self.server.recieve_tcp() is False:
+        listen = threading.Thread(target=self.server.receive)
+        listen.start()
 
-            # send values
-            self.MPU.update_values()
+        while listen.isAlive():
+            self.MPU.update_values() # update sensor values
 
+            #data = self.MPU.get_data()
+            #self.send_thread = threading.Thread(target=self.server.send_tcp, args=(data,))
+            #self.send_thread.daemon = True
+            #if self.send_thread.isAlive():
+            #    self.send_thread.join()
             if self.MPU.Data['CurrentAxis'] is not None:
+            #    self.send_thread.start()
                 self.server.send_tcp(self.MPU.Data)
                 if self.MPU.changed_axis():
                     self.led.brightness_fade_down()
-                    self.led.set_preset(self.Settings.Led_Face_List[self.MPU.Data['CurrentAxis']])
+                    self.led.set_preset(self.Settings.Face_List[self.MPU.Data['CurrentAxis']])
                     self.led.brightness_fade_up(self.Settings.PRST_ON_EDGE['Brightness'])
             else:
                 if self.MPU.changed_axis():
@@ -108,6 +142,7 @@ class MagicCube:
                     self.led.set_preset(self.Settings.PRST_ON_EDGE, change_brightness=True)
                     self.led.brightness_fade_up(self.Settings.PRST_ON_EDGE['Brightness'])
 
+        listen.join()
         return self.Received_Data_Flag
 
 
@@ -119,16 +154,21 @@ while True:
         
     except ConnectionResetError as err:
         print(err)
-        if not Cube.reconnect():
-            break
+        if Cube.reconnect():
+            continue
+        else:
+            exit()
     except EOFError as err:
         print(err)
-        if not Cube.reconnect():
-            break
+        if Cube.reconnect():
+            continue
+        else:
+            exit()
     except BrokenPipeError as err:
         print(err)
-        if not Cube.reconnect():
-            break
-
+        if Cube.reconnect():
+            continue
+        else:
+            exit()
 
 

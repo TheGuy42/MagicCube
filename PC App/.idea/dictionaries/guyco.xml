@@ -3,7 +3,11 @@
     <words>
       <w>accel</w>
       <w>activebackground</w>
+      <w>activeforeground</w>
+      <w>dropdown</w>
+      <w>prst</w>
       <w>recieve</w>
+      <w>selectbackground</w>
       <w>unassined</w>
     </words>
   </dictionary>

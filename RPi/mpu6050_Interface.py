@@ -6,7 +6,7 @@ from mpu6050 import mpu6050
 from time import sleep
 import time
 import os
-from config import CubeConfig
+from configuration import CubeConfig
 from pickle_interface import Pickler
 
 sensor = mpu6050(0x69)
@@ -70,19 +70,23 @@ class Accelerometer:
                 self.data['CurrentAxis'] = None
                 return None
 
+    # get raw values from sensor
     def get_values(self):
         self.raw_data = sensor.get_accel_data()
 
+    # get average acceleration of given reads and their sum
     def _get_average(self, sum, count):
         self.data['x'] = (sum['x'] / count)
         self.data['y'] = (sum['y'] / count)
         self.data['z'] = (sum['z'] / count)
 
+    # apply calibration offset
     def _apply_offset(self):
         self.data['x'] += self.Accel_Offset[self.data['CurrentAxis']]['x']
         self.data['y'] += self.Accel_Offset[self.data['CurrentAxis']]['y']
         self.data['z'] += self.Accel_Offset[self.data['CurrentAxis']]['z']
 
+    # round the data to 2 decimal points
     def round_average(self):
         self.data['x'] = round(self.data['x'], 2)
         self.data['y'] = round(self.data['y'], 2)
@@ -102,11 +106,13 @@ class Accelerometer:
             counter += 1
         # set the offset
         self._get_average(Sum, count)
+        # set the offset value for each axis accounting for the earth gravity
         self.Accel_Offset[self.data['CurrentAxis']]['x'] = (self.Accel_Offset_Table[self.data['CurrentAxis']]['x'] * CubeConfig.Accel_Constant) - self.data['x']
         self.Accel_Offset[self.data['CurrentAxis']]['y'] = (self.Accel_Offset_Table[self.data['CurrentAxis']]['y'] * CubeConfig.Accel_Constant) - self.data['y']
         self.Accel_Offset[self.data['CurrentAxis']]['z'] = (self.Accel_Offset_Table[self.data['CurrentAxis']]['z'] * CubeConfig.Accel_Constant) - self.data['z']
         print("Done Calibrating Face: " + str(self.data['CurrentAxis']))
 
+    # calibrate the accelerometer for each face of the cube
     def calibration_procedure(self):
         print("Starting calibration procedure..")
         for Face in range(6):
@@ -116,7 +122,7 @@ class Accelerometer:
             while self.data['CurrentAxis'] != Face:
                 self.get_orientation()
                 #print(self.data)
-                sleep(0.5)
+                sleep(0.1)
             # start the calibration of the face
             if self.data['CurrentAxis'] == Face:
                 print("Starting calibration of Face " + str(Face) + " DON'T move the cube")
@@ -124,6 +130,7 @@ class Accelerometer:
                 self.calibrate(1000, Face)
         print(self.Accel_Offset)
 
+    # calculate the average of 'count' reads and store them. (applying offset and rounding the result)
     def get_average_accel(self, count, offset=True):
         Sum = {'x': 0,
                'y': 0,

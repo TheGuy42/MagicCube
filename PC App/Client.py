@@ -7,6 +7,7 @@ class Client:
         self.Socket = socket.socket()
         self.port = port
         self.Socket.settimeout(10)
+
         # Client variables
         # self.Client = None
         # self.ClientAddress = None
