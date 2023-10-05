@@ -6,6 +6,7 @@ The project was written and tested with **python 3**. make sure to use it on the
 
 You can see pictures for reference on [imgur](https://imgur.com/a/eOWr2kO).
 You can also see a video on [youtube](https://www.youtube.com/watch?v=zX449j0VkWc&feature=youtu.be)
+and anothe updated [video](https://youtu.be/o7vy6GcWytc).
 
 ## Preparing pc
 1. Make sure you have python 3 installed
